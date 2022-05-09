@@ -1,9 +1,10 @@
 import UserResult from '../components/users/UserResult'
-
+import UserSearch from '../components/users/UserSearch'
 function Home() {
     
   return (
-    <div>Home
+    <div>
+        <UserSearch />
         <UserResult/>
     </div>
     
