@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
 import GithubContext from "../context/github/GithubContext";
 import Spinner from "../components/layout/Spinner";
+
 function User() {
   const { getUser, user, loading } = useContext(GithubContext);
   const params = useParams();
@@ -50,16 +51,28 @@ function User() {
           </div>
 
           <div className="col-span-2">
-              <div className="mb-6">
-                  <h1 className="text-3xl card-title">
-                      {name}
-                      <div className="ml-2 mr-1 badge bagde-success">
-                          {type}
-                      </div>
-                  </h1>
+            <div className="mb-6">
+              <h1 className="text-3xl card-title">
+                {name}
+                <div className="ml-2 mr-1 badge bagde-success">{type}</div>
+                {hireable && (
+                  <div className="mx-1 badge badge-info">Hireable</div>
+                )}
+              </h1>
+              <p>{bio}</p>
+              <div className="mt-4 card-actions">
+                <a
+                  href={html_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-outline"
+                >
+                  Visit Github Profile
+                </a>
               </div>
+            </div>
           </div>
-        </div>  
+        </div>
       </div>
     </>
   );
