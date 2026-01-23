@@ -1,6 +1,5 @@
 import { createContext, useReducer } from "react";
 import githubReducer from "./GithubReducer";
-import Web from "../../config";
 
 const GithubContext = createContext();
 
