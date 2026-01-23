@@ -4,8 +4,6 @@ import Web from "../../config";
 
 const GithubContext = createContext();
 
-const GithubUrl = Web.url;
-const GithubToken = Web.token;
 
 export const GithubProvider = ({ children }) => {
   const initialState = {

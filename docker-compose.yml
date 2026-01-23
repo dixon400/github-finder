@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  github-finder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_GITHUB_API=${REACT_APP_GITHUB_API:-https://api.github.com}
+      - REACT_APP_GITHUB_TOKEN=${REACT_APP_GITHUB_TOKEN}
+    container_name: github-finder-app
+    restart: unless-stopped
